@@ -8,7 +8,7 @@ import server from "../environment";
 export const AuthContext = createContext({});
 
 const client = axios.create({
-    baseURL: `https://zoom-clone2-0kpb.onrender.com/`
+    baseURL: "https://zoom-clone2-0kpb.onrender.com/"
 })
 
 

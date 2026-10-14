@@ -18,7 +18,10 @@ const io = connectToSocket(server);
 
 
 app.set("port", process.env.BACKEND_PORT );
-app.use(cors());
+app.use(cors({
+    origin: "https://zoom-clone2-frontend.onrender.com",
+    credentials: true
+}));
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 
