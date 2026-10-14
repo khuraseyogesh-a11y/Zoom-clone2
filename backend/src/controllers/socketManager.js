@@ -7,14 +7,12 @@ let timeOnline = {}
 
 export const connectToSocket = (server) => {
     const io = new Server(server, {
-        cors: {
-            origin: "*",
-            methods: ["GET", "POST"],
-            allowedHeaders: ["*"],
-            credentials: true
-        }
-    });
-
+    cors: {
+        origin: "https://zoom-clone2-frontend.onrender.com",
+        methods: ["GET", "POST"],
+        credentials: true
+    }
+});
 
     io.on("connection", (socket) => {
 
