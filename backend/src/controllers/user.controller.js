@@ -13,7 +13,7 @@ const login = async (req, res) => {
     }
 
     try {
-        const user = await User.findOne({ username });
+        const user = await User.findOne({ username:username });
         if (!user) {
             return res.status(httpStatus.NOT_FOUND).json({ message: "User Not Found" })
         }
@@ -42,7 +42,7 @@ const register = async (req, res) => {
 
 
     try {
-        const existingUser = await User.findOne({ username });
+        const existingUser = await User.findOne({ username:username });
         if (existingUser) {
             return res.status(httpStatus.FOUND).json({ message: "User already exists" });
         }
